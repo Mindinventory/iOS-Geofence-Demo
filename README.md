@@ -16,9 +16,9 @@ Minimum OS 10.0 and later
 - In our demo we can use core data for storing region data for testing perpose. so core data model like below.
 
     
-      extension TblGeoFance { 
-         @nonobjc public class func fetchRequest() -> NSFetchRequest<TblGeoFance> {
-           return NSFetchRequest<TblGeoFance>(entityName: "TblGeoFance")
+      extension TblGeofence { 
+         @nonobjc public class func fetchRequest() -> NSFetchRequest<TblGeofence> {
+           return NSFetchRequest<TblGeofence>(entityName: "TblGeofence")
           }
 
        @NSManaged public var identifier: String?
