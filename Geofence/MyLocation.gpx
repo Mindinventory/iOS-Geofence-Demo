@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode"> 
+
+    <!--
+            Provide one or more waypoints containing a latitude/longitude pair. If you provide one
+            waypoint, Xcode will simulate that specific location. If you provide multiple waypoints,
+            Xcode will simulate a route visitng each waypoint.
+     -->
+<!--    <wpt lat="37.331705" lon="-122.030237">-->
+<!--         <name>Cupertino</name>-->
+      <!-- -->
+      <wpt lat="23.057582" lon="72.534458"></wpt> //    MI
+      <wpt lat="23.057598" lon="72.534541"></wpt> //    MI Prking
+      <wpt lat="23.057347" lon="72.534482"></wpt> //    MI Exit 1
+      <wpt lat="23.057361" lon="72.534176"></wpt> //    MI Mian Exit
+      <wpt lat="23.057391" lon="72.534724"></wpt> //    MI okffice
+      
+      <wpt lat="23.059445" lon="72.534302"></wpt> //    Turn 1 Triangle
+      <wpt lat="23.059445" lon="72.534302"></wpt> //    Turn 2 Way to bhuyangdev
+      
+      <wpt lat="23.052384" lon="72.533718"></wpt> //    bhuyang
+      
+      <wpt lat="23.061001" lon="72.537140"></wpt> //    Way one Dubey Turn
+      <wpt lat="23.062675" lon="72.537929"></wpt> //    C.p
+      <wpt lat="23.065157" lon="72.539007"></wpt> //    Trun Shaibagh
+      <wpt lat="23.065206" lon="72.538052"></wpt> //    enter Shaibagh Milk
+      <wpt lat="23.064434" lon="72.537143"></wpt> //    Home
+        
+        
+        <wpt lat="23.062158" lon="72.539002"></wpt> //Amul
+        
+        <wpt lat="23.063303" lon="72.544988"></wpt> //ArjunGrace
+        <wpt lat="23.064298" lon="72.543442"></wpt> //Home
+<!--         <wpt lat="23.58589" lon="58.4059227"></wpt> //Muscat-->
+
+         <wpt lat="23.052398" lon="72.533688"></wpt> //Subhash
+         
+<!--         <wpt lat="-23.057582" lon="72.534458"></wpt>-->
+<!--         <wpt lat="-23.057582" lon="72.14458"></wpt>-->
+<!--         <wpt lat="-23.57582" lon="72.14458"></wpt>-->
+         <!--
+                Optionally provide a time element for each waypoint. Xcode will interpolate movement
+                at a rate of speed based on the time elapsed between each waypoint. If you do not provide
+                a time element, then Xcode will use a fixed rate of speed.
+          
+                Waypoints must be sorted by time in ascending order.
+          -->
+<!--         <time>2014-09-24T14:55:37Z</time>-->
+<!--	</wpt>-->
+<!--    -->
+</gpx>
