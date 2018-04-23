@@ -81,7 +81,7 @@ Minimum OS 10.0 and later
             // Here region.identifier is identifier which you provide during register geofence region.
             // Now you can perform action you want to perfrom. that will same for below didExitRegion method
             
-            let geoFance  = (TblGeoFance.findOrCreate(dictionary: ["identifier":region.identifier]) as? TblGeoFance)!
+            let geoFance  = (TblGeofence.findOrCreate(dictionary: ["identifier":region.identifier]) as? TblGeofence)!
             if (!(geoFance.title?.isEmpty)!)
             {
                 self.fireNotification(obj: geoFance,  isEnter: true)
@@ -92,7 +92,7 @@ Minimum OS 10.0 and later
         func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
            if region is CLCircularRegion {
             
-            let geoFance  = (TblGeoFance.findOrCreate(dictionary: ["identifier":region.identifier]) as? TblGeoFance)!
+            let geoFance  = (TblGeofence.findOrCreate(dictionary: ["identifier":region.identifier]) as? TblGeofence)!
             if (!(geoFance.title?.isEmpty)!)
             {
                 self.fireNotification(obj: geoFance,  isEnter: false)
@@ -104,7 +104,7 @@ Minimum OS 10.0 and later
         
  4) Registering Your Geofences with your location and radios of monitoring region 
           
-        func registerGeoFance(obj : TblGeoFance) {
+        func registerGeoFance(obj : TblGeofence) {
         
             if locationManager.monitoredRegions.count >= 20 // check current monitored region Apple allowed only 20 at time
             {
@@ -121,7 +121,7 @@ Minimum OS 10.0 and later
          
   5) Next for trigger notification when enter or leave form register region. For this we can use Local Notifications using UNUserNotification framework which have support only iOs 10 or later
   
-         func fireNotification(obj:TblGeoFance , isEnter:Bool)
+         func fireNotification(obj:TblGeofence , isEnter:Bool)
     {
         
         print("notification will be triggered in five seconds..Hold on tight")
@@ -158,7 +158,7 @@ Minimum OS 10.0 and later
         print("Notification being triggered")
         let strDevides = notification.request.identifier.components(separatedBy: "++ ")
         
-        let geoFance  = (TblGeoFance.findOrCreate(dictionary: ["identifier":strDevides[0]]) as? TblGeoFance)!
+        let geoFance  = (TblGeofence.findOrCreate(dictionary: ["identifier":strDevides[0]]) as? TblGeofence)!
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + DispatchTimeInterval.milliseconds(Int(0))) {
                         let alert = UIAlertController(
