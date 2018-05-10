@@ -189,5 +189,9 @@ Minimum OS 10.0 and later
  6) Now we have create one ViewController where we have to add our region manually.   
      - Drag and Drop ViewControlle.swift file in your Projects.
      
+# LICENSE!
+
+Geofence is [MIT-licensed](https://github.com/mindinventory1/Geofence/blob/master/LICENSE).
+     
 ## Let us know!
 We’d be really happy if you sent us links to your projects where you use our component. Just send an email to sales@mindinventory.com And do let us know if you have any questions or suggestion regarding our work.
