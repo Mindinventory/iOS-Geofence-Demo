@@ -191,7 +191,7 @@ Minimum OS 10.0 and later
      
 # LICENSE!
 
-Geofence is [MIT-licensed](https://github.com/mindinventory1/Geofence/blob/master/LICENSE).
+Geofence is [MIT-licensed](https://github.com/mindinventory/Geofence/blob/master/LICENSE).
      
 ## Let us know!
 We’d be really happy if you send us links to your projects where you use our component. Just send an email to sales@mindinventory.com And do let us know if you have any questions or suggestion regarding our work.
