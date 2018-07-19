@@ -1,19 +1,17 @@
-# Geofence
-You can setup your own latitude and longitude, and Geofencing notifies your app when the device enters or leaves geographical regions you set up.
+# iOS Geofence Demo
+You can setup your own geofence by providing latitude and longitude, and it will notify your app when the device enters or leaves the geofence.
 
-It lets you can trigger a notification whenever you enter and leave the restaurant, Shopping center etc. 
+Implementation of geofencing can be useful in various cases, You can define geofence that can trigger a notification whenever user enters or leaves the restaurant, Shopping center or particular region. 
 
 In this geofencing tutorial, you will learn how to use region monitoring in iOS with Swift 4.0 – using the Region Monitoring API in Core Location.
-
-Implementation of this code can be used at many places, for example, where the latest and greatest deals whenever favorite shops or restaurant are nearby.
 
 # Requirements
 Minimum OS 10.0 and later
 
-# Note
+# Tip
 - To test in simulator you can use .GPX file (add GPX file file-> new -> under resource section there will option of GPX file)
 - For using GPX file when app is running in simulator there is option in xCode (debug -> simulate location -> select your GPX file)
-- In our demo we can use core data for storing region data for testing perpose. so core data model like below.
+- In our demo we are using core data to store region data for testing perpose. our core data model looks like below:
 
     
       extension TblGeofence { 
@@ -33,14 +31,14 @@ Minimum OS 10.0 and later
 
 
 # Manual Installation
-1) Firs of setuo Location manager and Location permissions.
+1) First thing we need to do is setup Location manager and Location permissions.
           
        class AppDelegate: UIResponder, UIApplicationDelegate {  
        let locationManager = CLLocationManager()
        self.enableLocationServices()
         }
        
-2) Next add Following methode in Appdelegate.
+2) Next we need to add Following methode in Appdelegate.
 
         func enableLocationServices() // to check status of locations
         {
@@ -72,8 +70,9 @@ Minimum OS 10.0 and later
         
        }
    
-3) Now set the delegate of the locationManager instance so that receive the relevant delegate method calls.
-            extension AppDelegate: CLLocationManagerDelegate {
+3) Now set the delegate of the locationManager instance so that we can receive callbacks to respective delegate methods.
+
+        extension AppDelegate: CLLocationManagerDelegate {
     
        func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
            if region is CLCircularRegion {
@@ -119,7 +118,7 @@ Minimum OS 10.0 and later
           locationManager.requestState(for: region) // that will check if user is already inside location then it will fire  notification instantly.
          }
          
-  5) Next for trigger notification when enter or leave form register region. For this we can use Local Notifications using UNUserNotification framework which have support only iOs 10 or later
+  5) To trigger notification when enter or leave a registered region, we can use Local Notifications using UNUserNotification framework which is supported only in iOS 10 or later versions
   
          func fireNotification(obj:TblGeofence , isEnter:Bool)
     {
@@ -186,7 +185,7 @@ Minimum OS 10.0 and later
     
        }
        
- 6) Now we have create one ViewController where we have to add our region manually.   
+ 6) Now we have created one ViewController where we can add our geofence region.
      - Drag and Drop ViewControlle.swift file in your Projects.
      
 # LICENSE!
