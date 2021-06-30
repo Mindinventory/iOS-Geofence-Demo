@@ -157,6 +157,7 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         print("Tapped in notification")
+        debugPrint("====================================")
     }
     
     //This is key callback to present notification while the app is in foreground
