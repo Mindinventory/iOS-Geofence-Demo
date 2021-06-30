@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let locationManager = CLLocationManager()
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
@@ -72,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Enable any of your app's location features
             
             break
+        @unknown default:break;
         }
         
     }
@@ -86,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         content.title = obj.title ?? "TitleMissing"
         content.subtitle = obj.msg! + "at lat = \(obj.latitude) long = \(obj.longitude)"
         content.body = "you are \(isEnter ? "enetr in" : "Exit from") \(obj.title ?? "TitleMissing")"
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         
         let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 0.1, repeats: false)
         let request = UNNotificationRequest(identifier:obj.identifier! + "++ \(isEnter ? "1" : "0") \(NSDate.timeIntervalSinceReferenceDate)", content: content, trigger: trigger)
@@ -170,7 +171,7 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
                         let alert = UIAlertController(
                             title: "\(geoFance.title ?? "BlankTitleRecevied")",
                             message: "\(notification.request.content.subtitle) \n \(notification.request.content.body)",
-                            preferredStyle: UIAlertControllerStyle.alert
+                            preferredStyle: UIAlertController.Style.alert
                         )
             
                         alert.addAction(UIAlertAction(title: "Okey", style: .cancel, handler: { (alert) -> Void in

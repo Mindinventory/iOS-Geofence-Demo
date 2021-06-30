@@ -18,7 +18,7 @@ extension String {
     
     func blank() -> Bool
     {
-        return self.trim()!.characters.count == 0
+        return self.trim()!.count == 0
     }
     
     func validEmail() -> Bool
@@ -31,7 +31,7 @@ extension String {
     
     func validPhone() -> Bool
     {
-        if(self.characters.count < 14)
+        if(self.count < 14)
         {
             return false
         }
@@ -132,19 +132,19 @@ extension String {
     
     func truncate(by ellipsis:String, width:CGFloat, font:UIFont) -> String
     {
-        if ((self as NSString).size(withAttributes: [NSAttributedStringKey.font:font]).width < width) {
+        if ((self as NSString).size(withAttributes: [NSAttributedString.Key.font:font]).width < width) {
             return self
         }
         
         var width = width
         let truncatedString = NSMutableString(string: "\(self)\(ellipsis)")
         
-        width -= (ellipsis as NSString).size(withAttributes: [NSAttributedStringKey.font:font]).width
+        width -= (ellipsis as NSString).size(withAttributes: [NSAttributedString.Key.font:font]).width
         
         var range = truncatedString.range(of: ellipsis)
         range.length = 1
         
-        while (truncatedString.size(withAttributes: [NSAttributedStringKey.font:font]).width > width && range.location > 0)
+        while (truncatedString.size(withAttributes: [NSAttributedString.Key.font:font]).width > width && range.location > 0)
         {
             range.location -= 1
             truncatedString.deleteCharacters(in: range)

@@ -31,21 +31,21 @@ class KeyboardManager  {
     
     static func enableKeyboardNotification() {
         
-        NotificationCenter.default.addObserver(KeyboardManager.shared(), selector: #selector(self.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(KeyboardManager.shared, selector: #selector(self.keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(KeyboardManager.shared(), selector: #selector(self.keyboardDidHide(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        NotificationCenter.default.addObserver(KeyboardManager.shared(), selector: #selector(self.keyboardDidHide(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     static func disableKeyboardNotification() {
-        NotificationCenter.default.removeObserver(keyboardmanager, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(keyboardmanager, name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.removeObserver(keyboardmanager, name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        NotificationCenter.default.removeObserver(keyboardmanager, name: UIResponder.keyboardDidHideNotification, object: nil)
     }
     
     @objc  private func keyboardWillShow(notification:Notification) {
         
         let info = notification.userInfo
-        let keyboardHeight = (info?[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.height
+        let keyboardHeight = (info?[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.height
         
         delegate?.keyboardWillShow(notification: notification, keyboardHeight: keyboardHeight)
     }

@@ -106,7 +106,7 @@ class ViewController: UIViewController {
         let alert = UIAlertController(
             title: "Empty",
             message: str,
-            preferredStyle: UIAlertControllerStyle.alert
+            preferredStyle: UIAlertController.Style.alert
         )
         
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (alert) -> Void in

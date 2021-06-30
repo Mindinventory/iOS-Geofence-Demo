@@ -64,7 +64,7 @@ extension NSObject
         }
         
         if (self is String) {
-            if ((self as! String).characters.count == 0) {
+            if ((self as! String).count == 0) {
                 return true
             }
         }
